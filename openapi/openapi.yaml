@@ -1,0 +1,158 @@
+openapi: 3.2.0
+
+info:
+  title: Clash of Clans apis
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.clashofclans.com/v1
+
+security:
+  - bearerAuth: []
+
+paths:
+  /clans/{clanTag}/currentwar/leaguegroup:
+    get:
+      operationId: getClanCurrentWarLeagueGroup
+      summary: Retrieve information about clan's current clan war league group
+      parameters:
+        - name: clanTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /clanwarleagues/wars/{warTag}:
+    get:
+      operationId: getClanWarLeagueWar
+      summary: Retrieve information about individual clan war league war
+      parameters:
+        - name: warTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /clans/{clanTag}/warlog:
+    get:
+      operationId: getClanWarLog
+      summary: Retrieve clan's clan war log
+      parameters:
+        - name: clanTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /clans:
+    get:
+      operationId: searchClans
+      summary: Search clans
+      parameters:
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: locationId
+          in: query
+          required: false
+          schema:
+            type: integer
+
+  /clans/{clanTag}/currentwar:
+    get:
+      operationId: getClanCurrentWar
+      summary: Retrieve information about clan's current clan war
+      parameters:
+        - name: clanTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /clans/{clanTag}:
+    get:
+      operationId: getClan
+      summary: Get clan information
+      parameters:
+        - name: clanTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /clans/{clanTag}/members:
+    get:
+      operationId: getClanMembers
+      summary: List clan members
+      parameters:
+        - name: clanTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /clans/{clanTag}/capitalraidseasons:
+    get:
+      operationId: getClanCapitalRaidSeasons
+      summary: Retrieve clan's capital raid seasons
+      parameters:
+        - name: clanTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /players/{playerTag}:
+    get:
+      operationId: getPlayer
+      summary: Get player information
+      parameters:
+        - name: playerTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /players/{playerTag}/battlelog:
+    get:
+      operationId: getPlayerBattleLog
+      summary: Get player battle log
+      parameters:
+        - name: playerTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /players/{playerTag}/verifytoken:
+    post:
+      operationId: verifyPlayerToken
+      summary: Verify player API token that can be found from the game settings
+      parameters:
+        - name: playerTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+  /players/{playerTag}/leaguehistory:
+    get:
+      operationId: getPlayerLeagueHistory
+      summary: Get player league history
+      parameters:
+        - name: playerTag
+          in: path
+          required: true
+          schema:
+            type: string
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

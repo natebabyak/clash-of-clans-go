@@ -1,0 +1,6 @@
+extends:
+  - recommended
+
+apis:
+  clash-of-clans:
+    root: ./openapi/openapi.yaml
