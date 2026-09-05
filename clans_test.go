@@ -5,6 +5,7 @@ import (
 )
 
 func TestGetClanCurrentWarLeagueGroup(t *testing.T) {
+
 }
 
 func TestGetClanWarLeaguesWar(t *testing.T) {

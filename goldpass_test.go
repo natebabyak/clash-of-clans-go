@@ -5,4 +5,5 @@ import (
 )
 
 func TestGetGoldPass(t *testing.T) {
+
 }

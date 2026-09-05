@@ -4,10 +4,9 @@ A Go client for the Clash of Clans API.
 
 ## Features
 
-- 100% Clash of Clans API coverage
-- Fully typed in Go
-- Minimal
-- Fast
+- Full API coverage
+- Fully typed
+- Near-zero performance overhead
 
 ## Getting Started
 
@@ -46,17 +45,6 @@ func main() {
     fmt.Printf("%s has %d members!\n", clan.Name, clan.Members)
 }
 ```
-
-## Clash of Clans API Token
-
-It will automatically use the following environment variables:
-
-- `CLASH_OF_CLANS_API_KEY`
-- `CLASH_OF_CLANS_API_TOKEN`
-- `COC_API_KEY`
-- `COC_API_TOKEN`
-
-Alternatively, you can set the API token manually using the `WithKey` option.
 
 ```go
 client, err := coc.NewClient(
