@@ -24,20 +24,18 @@ package main
 import (
     "context"
     "fmt"
+    "log"
     "os"
 
-    "github.com/natebabyak/clash-of-clans-go"
+    coc "github.com/natebabyak/clash-of-clans-go"
 )
 
 func main() {
-    client, err := coc.NewClient()
-    if err != nil {
-        log.Fatal(err)
-    }
+    client := coc.NewClient(os.Getenv("COC_API_KEY"))
 
     ctx := context.Background()
 
-    clan, err := client.Clans.Get(ctx, "#1234567890")
+    clan, err := client.GetClan(ctx, "#2PP")
     if err != nil {
         log.Fatal(err)
     }
@@ -46,11 +44,9 @@ func main() {
 }
 ```
 
-```go
-client, err := coc.NewClient(
-    coc.WithKey(os.Getenv("CLASH_TOKEN")),
-)
-```
+## Examples
+
+See [`examples/equipment-cli`](examples/equipment-cli) for a small CLI that fetches top global player rankings and prints common hero equipment combos. Copy `.env.example` to `.env` and set `COC_API_KEY`.
 
 ## Legal
 

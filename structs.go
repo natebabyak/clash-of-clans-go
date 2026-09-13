@@ -482,11 +482,11 @@ type PlayerItemLevel struct {
 }
 
 type PlayerLegendStatistics struct {
-	CurrentSeason             []LegendLeagueTournamentSeasonResult
-	BestSeason                []LegendLeagueTournamentSeasonResult
-	PreviousSeason            []LegendLeagueTournamentSeasonResult
-	PreviousBuilderBaseSeason []LegendLeagueTournamentSeasonResult
-	BestBuilderBaseSeason     []LegendLeagueTournamentSeasonResult
+	CurrentSeason             LegendLeagueTournamentSeasonResult
+	BestSeason                LegendLeagueTournamentSeasonResult
+	PreviousSeason            LegendLeagueTournamentSeasonResult
+	PreviousBuilderBaseSeason LegendLeagueTournamentSeasonResult
+	BestBuilderBaseSeason     LegendLeagueTournamentSeasonResult
 	LegendTrophies            int
 }
 
